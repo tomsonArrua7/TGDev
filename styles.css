@@ -24,45 +24,45 @@
   /* ==========================================
      LIGHT THEME (Default)
      ========================================== */
-  --primary: #111827;         /* Text headings / dark elements */
+  --primary: #0F172A;         /* Slate 900 - Text headings / dark elements */
   --primary-light: #FFFFFF;   /* Cards bg */
-  --primary-dark: #111827;    /* Dark background fallback */
+  --primary-dark: #F8FAFC;    /* Slate 50 - Dark background fallback */
   
-  --neutral-dark: #111827;    /* Slate 950 - Text primary */
-  --neutral-muted: #666666;   /* Gray 600 - Text secondary */
+  --neutral-dark: #0F172A;    /* Slate 900 - Text primary */
+  --neutral-muted: #475569;   /* Slate 600 - Text secondary */
   --neutral-light: #FFFFFF;   /* Pure white - Primary background */
-  --neutral-bg-light: #F9F9F9;/* Light Gray - Page offset background */
+  --neutral-bg-light: #F8FAFC;/* Slate 50 - Page offset background */
   
-  --border-light: #E5E5E5;    /* Light gray border */
-  --border-dark: #2C2C2C;     /* Dark gray border */
+  --border-light: #E2E8F0;    /* Slate 200 border */
+  --border-dark: #E2E8F0;     /* Slate 200 border dark fallback */
   
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
   --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05);
 
-  --hero-bg: linear-gradient(135deg, #F3F4F6 0%, #FFFFFF 100%);
-  --hero-grid: rgba(0, 0, 0, 0.02);
-  --hero-title-color: #111827;
-  --hero-desc-color: #4B5563;
-  --tech-circle-border: rgba(0, 0, 0, 0.05);
-  --tech-circle-dash: rgba(0, 0, 0, 0.08);
+  --hero-bg: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+  --hero-grid: rgba(15, 23, 42, 0.02);
+  --hero-title-color: #0F172A;
+  --hero-desc-color: #475569;
+  --tech-circle-border: rgba(15, 23, 42, 0.05);
+  --tech-circle-dash: rgba(15, 23, 42, 0.08);
 }
 
 [data-theme="dark"] {
   /* ==========================================
      DARK THEME (Slate-Grey Premium)
      ========================================== */
-  --primary: #F9FAFB;         /* Headings light */
-  --primary-light: #1F2937;   /* Cards background (Slate 800) */
-  --primary-dark: #0B0F19;    /* Footer background */
+  --primary: #F8FAFC;         /* Slate 50 - Headings light */
+  --primary-light: #1F2937;   /* Slate 800 - Cards background */
+  --primary-dark: #0B0F19;    /* Slate 950 - Footer background */
   
-  --neutral-dark: #F9FAFB;    /* Near white text */
-  --neutral-muted: #9CA3AF;   /* Muted gray text */
-  --neutral-light: #111827;   /* Slate 900 background (not pitch black) */
-  --neutral-bg-light: #0B0F19;/* Slate 950 background */
+  --neutral-dark: #F8FAFC;    /* Slate 50 - Near white text */
+  --neutral-muted: #94A3B8;   /* Slate 400 - Muted gray text */
+  --neutral-light: #111827;   /* Slate 900 - Primary dark background */
+  --neutral-bg-light: #0B0F19;/* Slate 950 - Offset dark background */
   
-  --border-light: #374151;    /* Slate 700 borders */
+  --border-light: #374151;    /* Slate 700 - Borders dark */
   --border-dark: #1F2937;     
   
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
@@ -72,8 +72,8 @@
 
   --hero-bg: linear-gradient(135deg, #0B0F19 0%, #111827 100%);
   --hero-grid: rgba(255, 255, 255, 0.02);
-  --hero-title-color: #F9FAFB;
-  --hero-desc-color: rgba(255, 255, 255, 0.7);
+  --hero-title-color: #F8FAFC;
+  --hero-desc-color: rgba(248, 250, 252, 0.7);
   --tech-circle-border: rgba(255, 255, 255, 0.05);
   --tech-circle-dash: rgba(255, 255, 255, 0.08);
 }
@@ -170,12 +170,12 @@ button {
 }
 
 .bg-dark {
-  background-color: var(--primary);
-  color: var(--neutral-light);
+  background-color: var(--neutral-bg-light);
+  color: var(--neutral-dark);
 }
 
 .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 {
-  color: var(--neutral-light);
+  color: var(--primary);
 }
 
 .bg-offset {
@@ -515,7 +515,7 @@ button {
 .tech-node {
   position: absolute;
   background-color: var(--accent);
-  color: var(--neutral-light);
+  color: #FFFFFF;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -604,7 +604,7 @@ button {
 /* Showcase Section */
 .showcase-section {
   position: relative;
-  background-color: #0B0F19; /* Maintain dark showcase in both themes */
+  background-color: var(--neutral-bg-light); /* Swap dynamically */
 }
 
 .showcase-grid {
@@ -614,8 +614,8 @@ button {
 }
 
 .showcase-card {
-  background: #1F2937; /* Maintain dark cards inside dark showcase */
-  border: 1px solid #2C2C2C;
+  background: var(--primary-light); /* Swap dynamically */
+  border: 1px solid var(--border-light); /* Swap dynamically */
   border-radius: 12px;
   overflow: hidden;
   transition: var(--transition-normal);
@@ -675,12 +675,12 @@ button {
 
 .showcase-card h3 {
   font-size: 1.4rem;
-  color: var(--neutral-light);
+  color: var(--primary);
   margin-bottom: 0.75rem;
 }
 
 .showcase-card p {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--neutral-muted);
   font-size: 0.95rem;
   margin-bottom: 1.75rem;
   flex-grow: 1;
@@ -877,10 +877,18 @@ textarea.form-input {
 
 /* Footer */
 .footer {
-  background-color: #0B0F19; /* Maintain dark footer in both themes */
-  color: rgba(255, 255, 255, 0.6);
+  background-color: var(--primary-dark); /* Swap dynamically */
+  color: var(--neutral-muted);
   padding: 4rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-logo {
+  color: var(--primary) !important;
+}
+
+.footer-copyright {
+  color: var(--neutral-muted) !important;
 }
 
 .footer-content {
@@ -1268,8 +1276,10 @@ textarea.form-input {
 
 /* Trust / Stats Counter */
 .inst-stats {
-  background-color: var(--primary);
-  color: var(--neutral-light);
+  background-color: var(--neutral-bg-light);
+  color: var(--neutral-dark);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .inst-stats-grid {
@@ -1290,7 +1300,7 @@ textarea.form-input {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--neutral-muted);
 }
 
 
@@ -1579,7 +1589,7 @@ textarea.form-input {
 .theme-toggle {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.85); /* Default white on hero */
+  color: var(--primary); /* Swap dynamically */
   cursor: pointer;
   width: 40px;
   height: 40px;
