@@ -7,20 +7,20 @@
 
 :root {
   /* Colors */
-  --primary: #0A192F;         /* Deep Navy - Trust & Security */
-  --primary-light: #112240;   /* Light Navy - Cards/Secondary backgrounds */
-  --primary-dark: #020C1B;    /* Dark Navy - Footer/Hero Base */
+  --primary: #121212;         /* Pure Dark Charcoal - Sleek & Modern */
+  --primary-light: #1E1E1E;   /* Dark Slate - Cards/Secondary backgrounds */
+  --primary-dark: #000000;    /* Pitch Black - Footer/Hero Base */
   
-  --accent: #E50914;          /* Premium Crimson Red - Call To Action & Highlights */
-  --accent-hover: #B80710;    /* Dark Red - Hover states */
+  --accent: #FF003C;          /* Vibrant High-Contrast Red - Call To Action & Highlights */
+  --accent-hover: #C2002B;    /* Dark Red - Hover states */
   
-  --neutral-dark: #0F172A;    /* Slate 900 - Text dark */
-  --neutral-muted: #475569;   /* Slate 600 - Secondary text */
+  --neutral-dark: #121212;    /* Slate 950 - Text dark */
+  --neutral-muted: #666666;   /* Medium Neutral Gray - Secondary text */
   --neutral-light: #FFFFFF;   /* White */
-  --neutral-bg-light: #F8FAFC;/* Slate 50 - Background light */
+  --neutral-bg-light: #FAFAFA;/* Slate 50 - Background light */
   
-  --border-light: #E2E8F0;    /* Slate 200 - Borders */
-  --border-dark: #233554;     /* Deep borders for dark themes */
+  --border-light: #E5E5E5;    /* Light Gray - Borders */
+  --border-dark: #262626;     /* Dark Charcoal - Deep borders for dark themes */
   
   /* Fonts */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -38,8 +38,8 @@
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 25px -5px rgba(10, 25, 47, 0.1), 0 8px 10px -6px rgba(10, 25, 47, 0.1);
-  --shadow-premium: 0 20px 40px rgba(2, 12, 27, 0.3);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================================
@@ -243,7 +243,7 @@ button {
 
 .header.scrolled {
   height: var(--header-shrink-height);
-  background: rgba(10, 25, 47, 0.95);
+  background: rgba(18, 18, 18, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-md);
@@ -619,7 +619,7 @@ button {
 }
 
 .showcase-tag {
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(18, 18, 18, 0.85);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--neutral-light);
@@ -808,7 +808,7 @@ button {
   outline: none;
   border-color: var(--primary);
   background-color: var(--neutral-light);
-  box-shadow: 0 0 0 3px rgba(10, 25, 47, 0.1);
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.1);
 }
 
 textarea.form-input {
@@ -928,7 +928,7 @@ textarea.form-input {
   z-index: 1001;
   background: var(--primary);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(2, 12, 27, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   padding: 0.85rem 1.75rem;
   border-radius: 50px;
   display: flex;
@@ -1064,7 +1064,7 @@ textarea.form-input {
 .eco-prod-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(10, 25, 47, 0.15);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .eco-prod-img-wrapper {
@@ -1167,7 +1167,7 @@ textarea.form-input {
 .inst-hero {
   padding-top: 180px;
   padding-bottom: 100px;
-  background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
+  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
   color: var(--neutral-light);
   text-align: center;
 }
@@ -1203,7 +1203,7 @@ textarea.form-input {
 
 .inst-practice-card:hover {
   box-shadow: var(--shadow-lg);
-  border-color: rgba(10, 25, 47, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
 
@@ -1211,7 +1211,7 @@ textarea.form-input {
   width: 50px;
   height: 50px;
   border-radius: 4px;
-  background-color: rgba(10, 25, 47, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   color: var(--primary);
   display: flex;
   align-items: center;
