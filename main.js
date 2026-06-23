@@ -11,20 +11,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const isDemoPage = document.body.classList.contains('demo-body');
 
+  // --- Theme Toggle Logic (Modo Claro / Oscuro) ---
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  
+  // Set default theme to dark if not set, or restore preference
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      let newTheme = theme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      handleScroll(); // Update header styling instantly
+    });
+  }
+
   // Handle header glassmorphism & shadow on scroll
   const handleScroll = () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     if (window.scrollY > 50) {
-      if (isDemoPage) {
+      if (isDemoPage || !isDark) {
         header.classList.add('scrolled-light');
+        header.classList.remove('scrolled');
       } else {
         header.classList.add('scrolled');
+        header.classList.remove('scrolled-light');
       }
     } else {
-      if (isDemoPage) {
-        header.classList.remove('scrolled-light');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.remove('scrolled');
+      header.classList.remove('scrolled-light');
     }
   };
 
@@ -213,5 +231,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 8000);
       });
     });
+  }
+
+  // --- Scroll Reveal Animation (Intersection Observer) ---
+  const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+  
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Trigger only once
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   }
 });

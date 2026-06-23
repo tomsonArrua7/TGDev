@@ -35,9 +35,27 @@
         </li>
       </ul>
       
-      <!-- Call to action button -->
-      <div class="nav-cta">
-        <a href="#contacto" class="btn btn-primary btn-small">Cotizar Proyecto</a>
+      <!-- Theme Toggle & CTA Container -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema (Modo Claro / Oscuro)">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <div class="nav-cta">
+          <a href="#contacto" class="btn btn-primary btn-small">Cotizar Proyecto</a>
+        </div>
       </div>
       
       <!-- Mobile hamburger toggle button -->
@@ -78,6 +96,16 @@
     </div>
   </section>
 
+  <!-- Infinite Marquee Section -->
+  <section class="marquee-section" aria-label="Tecnologías destacadas">
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <span>HTML5 &bull; CSS3 &bull; JavaScript (ES6) &bull; Python &bull; Bases de Datos &bull; Servidores y Hosting &bull; Netlify &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;</span>
+        <span>HTML5 &bull; CSS3 &bull; JavaScript (ES6) &bull; Python &bull; Bases de Datos &bull; Servidores y Hosting &bull; Netlify &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Technical Differential Section -->
   <section class="section-padding bg-offset" id="diferencial">
     <div class="container">
@@ -86,7 +114,7 @@
         Desarrollamos soluciones técnicas de primer nivel que marcan la diferencia en el mercado comercial de internet.
       </p>
       
-      <div class="differential-grid">
+      <div class="differential-grid reveal-stagger">
         <!-- Column 1: Speed & Clean code -->
         <article class="diff-card">
           <div class="diff-icon-wrapper" aria-hidden="true">
@@ -146,7 +174,7 @@
         Explora maquetas en vivo que demuestran la velocidad, el diseño responsive y el acabado estético de nuestras soluciones.
       </p>
       
-      <div class="showcase-grid">
+      <div class="showcase-grid reveal-stagger">
         <!-- E-Commerce Card -->
         <article class="showcase-card">
           <div class="showcase-img-container">
@@ -215,7 +243,7 @@
     <div class="container contact-grid">
       
       <!-- Left Column: Contact Channels -->
-      <div class="contact-info">
+      <div class="contact-info reveal">
         <h2>Iniciemos tu proyecto web</h2>
         <p>
           ¿Listo para llevar tu negocio al siguiente nivel con código de alta performance? Elige el canal que te resulte más cómodo para comunicarnos.
@@ -254,7 +282,7 @@
       </div>
       
       <!-- Right Column: Netlify Contact Form -->
-      <div class="contact-form-wrapper">
+      <div class="contact-form-wrapper reveal">
         <h3 class="contact-form-title">Envíanos un mensaje</h3>
         
         <!-- Netlify Form Setup -->
@@ -328,6 +356,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Contact Button -->
+  <a href="https://wa.me/5492215016468" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cotizar proyecto por WhatsApp">
+    <span class="whatsapp-tooltip">Cotizar proyecto</span>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.464L0 24zm6.59-4.846c1.6.95 3.197 1.451 4.838 1.453 5.485 0 9.94-4.447 9.943-9.919.002-2.65-1.02-5.143-2.88-7.009C16.69 1.815 14.205.793 11.562.793c-5.487 0-9.943 4.449-9.946 9.92-.001 1.774.475 3.498 1.38 5.061L2.03 21.57l6.196-1.625c1.472.802 3.125 1.222 4.79 1.222.001 0 0 0 .001 0zm11.367-7.794c-.302-.151-1.786-.881-2.062-.981-.277-.1-.478-.151-.68.151-.202.302-.782.981-.956 1.181-.176.2-.353.226-.655.076-1.537-.767-2.664-1.333-3.738-3.178-.285-.488.285-.453.816-1.513.088-.176.044-.328-.022-.479-.066-.151-.58-1.4-.796-1.92-.211-.508-.425-.439-.58-.446-.151-.008-.323-.009-.494-.009-.171 0-.45.064-.686.321-.236.257-.902.881-.902 2.148s.922 2.493 1.05 2.661c.126.168 1.814 2.769 4.398 3.882.615.264 1.094.422 1.468.541.618.196 1.18.169 1.625.1.497-.077 1.786-.731 2.038-1.44.252-.708.252-1.314.177-1.44-.075-.127-.277-.202-.58-.352z"/>
+    </svg>
+  </a>
 
   <!-- Core JavaScript -->
   <script src="main.js"></script>
