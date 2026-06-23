@@ -261,14 +261,17 @@ button {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--neutral-light);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  opacity: 0.9;
 }
 
 .btn-secondary:hover {
-  border-color: var(--neutral-light);
-  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
+  border-color: var(--accent);
+  background-color: rgba(255, 0, 60, 0.05);
   transform: translateY(-2px);
+  opacity: 1;
 }
 
 .btn-outline-dark {
