@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maqueta interactiva de sitio web institucional de consultoría corporativa y legal. Diseñado para transmitir solidez por TG Dev.">
+  <title>TG Consultores Demo | Solidez y Rigor Corporativo</title>
+  
+  <!-- Preconnect Google Fonts for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="demo-body">
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        TG Consultores<span class="logo-dot"></span>
+      </a>
+      
+      <!-- Demo Navigation Action Buttons -->
+      <div class="demo-nav-cta">
+        <a href="index.html#proyectos" class="demo-back-btn" aria-label="Volver a proyectos del portfolio">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Volver al Portfolio
+        </a>
+        <a href="#agendar" class="btn btn-outline-dark btn-small" style="background:var(--neutral-light); border-color:var(--border-light);">Agendar Turno</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Institutional Hero Section -->
+  <section class="inst-hero">
+    <div class="container">
+      <span class="demo-badge">Maqueta Institucional</span>
+      <h1 style="margin-top: 1.5rem;">Asesoría Jurídica y Consultoría de Alta Gama</h1>
+      <p>
+        Respaldamos el crecimiento de su empresa con un asesoramiento legal de primer nivel y soluciones comerciales adaptadas a regulaciones globales.
+      </p>
+      <a href="#especialidades" class="btn btn-primary">Nuestras Áreas</a>
+    </div>
+  </section>
+
+  <!-- Practice Areas Section -->
+  <section class="section-padding" id="especialidades">
+    <div class="container">
+      <h2 class="section-title">Servicios Corporativos</h2>
+      <p class="section-subtitle">
+        Proporcionamos una cobertura técnica integral y estructurada en diversas áreas de negocios y regulaciones gubernamentales.
+      </p>
+      
+      <div class="inst-practice-grid">
+        <!-- Area 1 -->
+        <article class="inst-practice-card">
+          <div class="inst-practice-icon" aria-hidden="true">
+            <!-- Scales / Legal SVG Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+              <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+              <circle cx="8" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3>Derecho Societario</h3>
+          <p>
+            Constitución y estructuración legal de empresas, fusiones, adquisiciones, liquidaciones y actas de asambleas corporativas.
+          </p>
+        </article>
+
+        <!-- Area 2 -->
+        <article class="inst-practice-card">
+          <div class="inst-practice-icon" aria-hidden="true">
+            <!-- Shield SVG Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Propiedad Intelectual</h3>
+          <p>
+            Registro de marcas, resguardo de patentes, derechos de autor, licencias de software y protección integral de activos de innovación tecnológica.
+          </p>
+        </article>
+
+        <!-- Area 3 -->
+        <article class="inst-practice-card">
+          <div class="inst-practice-icon" aria-hidden="true">
+            <!-- Tax / Dollar SVG Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
+          <h3>Planificación Impositiva</h3>
+          <p>
+            Estrategias de optimización fiscal lícita, auditorías de cumplimiento, precios de transferencia y defensa frente a inspecciones gubernamentales.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Milestones Stats Section -->
+  <section class="section-padding inst-stats" id="agendar">
+    <div class="container">
+      <div class="inst-stats-grid">
+        <div class="inst-stat-item">
+          <h3>15+</h3>
+          <p>Años de Trayectoria</p>
+        </div>
+        <div class="inst-stat-item">
+          <h3>500+</h3>
+          <p>Clientes Corporativos</p>
+        </div>
+        <div class="inst-stat-item">
+          <h3>98%</h3>
+          <p>Casos Exitosos</p>
+        </div>
+        <div class="inst-stat-item">
+          <h3>24/7</h3>
+          <p>Soporte de Emergencia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Return Banner -->
+  <div class="demo-banner" role="status">
+    <span class="demo-banner-text">Maqueta Corporativa activa. Diseño limpio y seguro.</span>
+    <a href="index.html#contacto" class="demo-banner-btn">Cotizar esta Web</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

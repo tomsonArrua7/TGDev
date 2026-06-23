@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maqueta interactiva de landing page para captura de leads. Optimizado por TG Dev para conversiones de campañas publicitarias.">
+  <title>TG Performance Demo | Auditoría de Velocidad Web Gratuita</title>
+  
+  <!-- Preconnect Google Fonts for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="demo-body">
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        TG Performance<span class="logo-dot"></span>
+      </a>
+      
+      <!-- Demo Navigation Action Buttons -->
+      <div class="demo-nav-cta">
+        <a href="index.html#proyectos" class="demo-back-btn" aria-label="Volver a proyectos del portfolio">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Volver
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Landing Hero Section -->
+  <section class="land-hero">
+    <div class="container land-hero-grid">
+      
+      <!-- Left Column: Value Proposition -->
+      <div>
+        <span class="land-tag">Propuesta de Valor</span>
+        <h1 class="land-title">Tu sitio web actual te está costando clientes.</h1>
+        <p class="land-desc">
+          El 53% de los usuarios abandonan páginas que demoran más de 3 segundos en abrir. Descubre los cuellos de botella técnicos que están frenando tus ventas.
+        </p>
+        
+        <ul class="land-bullets" aria-label="Beneficios de la auditoría">
+          <li class="land-bullet-item">
+            <span class="land-bullet-check" aria-hidden="true">✓</span>
+            Reporte Lighthouse detallado del rendimiento real.
+          </li>
+          <li class="land-bullet-item">
+            <span class="land-bullet-check" aria-hidden="true">✓</span>
+            Análisis de compresión de imágenes y scripts de terceros.
+          </li>
+          <li class="land-bullet-item">
+            <span class="land-bullet-check" aria-hidden="true">✓</span>
+            3 acciones críticas recomendadas de resolución inmediata.
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Right Column: Opt-In Capture Form Card -->
+      <div class="land-form-card">
+        <h2 class="land-form-title">Obtén tu Auditoría Gratis</h2>
+        <p class="land-form-desc">Completa los campos para recibir el análisis técnico detallado de tu sitio actual.</p>
+        
+        <!-- Netlify Opt-In Form Setup -->
+        <form name="lead-optin" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="landing-optin-form">
+          <input type="hidden" name="form-name" value="lead-optin" />
+          <p style="display:none">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          
+          <div class="form-group">
+            <label for="lead-name" class="form-label">Nombre completo</label>
+            <input type="text" name="name" id="lead-name" class="form-input" placeholder="Ej. Ana Gómez" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="lead-email" class="form-label">Email corporativo</label>
+            <input type="email" name="email" id="lead-email" class="form-input" placeholder="Ej. ana@empresa.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="lead-web" class="form-label">URL de tu sitio web</label>
+            <input type="url" name="web" id="lead-web" class="form-input" placeholder="Ej. https://miweb.com" required>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.75rem;">Solicitar Auditoría Gratis</button>
+          
+          <div id="landing-status" class="form-status" aria-live="polite"></div>
+          
+          <p style="font-size:0.75rem; text-align:center; color:var(--neutral-muted); margin-top:1.25rem;">
+            Respetamos tu privacidad. 100% libre de spam o publicidad no deseada.
+          </p>
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Demo Return Banner -->
+  <div class="demo-banner" role="status">
+    <span class="demo-banner-text">Maqueta de Landing Page activa. Estructura optimizada para conversión.</span>
+    <a href="index.html#contacto" class="demo-banner-btn">Cotizar esta Web</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
