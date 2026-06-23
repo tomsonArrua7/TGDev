@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScroll = () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     if (window.scrollY > 50) {
-      if (isDemoPage || !isDark) {
-        header.classList.add('scrolled-light');
-        header.classList.remove('scrolled');
-      } else {
+      if (isDark) {
         header.classList.add('scrolled');
         header.classList.remove('scrolled-light');
+      } else {
+        header.classList.add('scrolled-light');
+        header.classList.remove('scrolled');
       }
     } else {
       header.classList.remove('scrolled');

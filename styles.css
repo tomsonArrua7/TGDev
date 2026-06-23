@@ -47,6 +47,16 @@
   --hero-desc-color: #475569;
   --tech-circle-border: rgba(15, 23, 42, 0.05);
   --tech-circle-dash: rgba(15, 23, 42, 0.08);
+
+  /* Background Grid Texture */
+  --bg-texture: 
+    radial-gradient(rgba(15, 23, 42, 0.06) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  
+  /* Institutional Hero Theme-Aware Variables */
+  --inst-hero-bg: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
+  --inst-hero-text: var(--neutral-dark);
 }
 
 [data-theme="dark"] {
@@ -60,7 +70,7 @@
   --neutral-dark: #F8FAFC;    /* Slate 50 - Near white text */
   --neutral-muted: #94A3B8;   /* Slate 400 - Muted gray text */
   --neutral-light: #111827;   /* Slate 900 - Primary dark background */
-  --neutral-bg-light: #0B0F19;/* Slate 950 - Offset dark background */
+  --neutral-bg-light: #0B0F19;/* Slate 950 background */
   
   --border-light: #374151;    /* Slate 700 - Borders dark */
   --border-dark: #1F2937;     
@@ -70,12 +80,23 @@
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
   --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.5);
 
+  /* Hero Dark Grid */
   --hero-bg: linear-gradient(135deg, #0B0F19 0%, #111827 100%);
   --hero-grid: rgba(255, 255, 255, 0.02);
   --hero-title-color: #F8FAFC;
   --hero-desc-color: rgba(248, 250, 252, 0.7);
   --tech-circle-border: rgba(255, 255, 255, 0.05);
   --tech-circle-dash: rgba(255, 255, 255, 0.08);
+
+  /* Background Grid Texture */
+  --bg-texture: 
+    radial-gradient(rgba(248, 250, 252, 0.04) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(248, 250, 252, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.01) 1px, transparent 1px);
+
+  /* Institutional Hero Theme-Aware Variables */
+  --inst-hero-bg: linear-gradient(rgba(18, 18, 18, 0.95), rgba(18, 18, 18, 0.98)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
+  --inst-hero-text: var(--neutral-light);
 }
 
 /* ==========================================================================
@@ -97,6 +118,8 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--neutral-light);
+  background-image: var(--bg-texture); /* Applied grid dot texture */
+  background-size: 32px 32px, 32px 32px, 32px 32px;
   color: var(--neutral-dark);
   line-height: 1.6;
   overflow-x: hidden;
@@ -172,6 +195,8 @@ button {
 .bg-dark {
   background-color: var(--neutral-bg-light);
   color: var(--neutral-dark);
+  background-image: var(--bg-texture);
+  background-size: 32px 32px, 32px 32px, 32px 32px;
 }
 
 .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 {
@@ -180,6 +205,8 @@ button {
 
 .bg-offset {
   background-color: var(--neutral-bg-light);
+  background-image: var(--bg-texture);
+  background-size: 32px 32px, 32px 32px, 32px 32px;
 }
 
 /* ==========================================================================
@@ -295,14 +322,6 @@ button {
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.header.scrolled-light .nav-link {
-  color: var(--primary);
-}
-
-.header.scrolled-light .logo {
-  color: var(--primary);
-}
-
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -313,11 +332,21 @@ button {
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--neutral-light);
   letter-spacing: -0.03em;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
+}
+
+.logo-brand {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.logo-name {
+  color: var(--primary);
+  font-weight: 700;
+  transition: var(--transition-normal);
 }
 
 .logo-dot {
@@ -338,7 +367,8 @@ button {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--primary); /* Swap dynamically between themes */
+  opacity: 0.85;
   position: relative;
   padding: 0.5rem 0;
 }
@@ -357,7 +387,8 @@ button {
 }
 
 .nav-link:hover {
-  color: var(--neutral-light);
+  color: var(--accent); /* Hover accent highlight */
+  opacity: 1;
 }
 
 .nav-link:hover::after {
@@ -390,13 +421,9 @@ button {
 .mobile-toggle span {
   width: 100%;
   height: 2px;
-  background-color: var(--neutral-light);
+  background-color: var(--primary); /* Swap dynamically */
   border-radius: 2px;
   transition: var(--transition-normal);
-}
-
-.header.scrolled-light .mobile-toggle span {
-  background-color: var(--primary);
 }
 
 /* ==========================================================================
@@ -412,9 +439,9 @@ button {
   padding-top: var(--header-height);
   background: var(--hero-bg);
   background-image: 
-    radial-gradient(var(--hero-grid) 1px, transparent 1px),
+    var(--bg-texture),
     var(--hero-bg);
-  background-size: 28px 28px, 100% 100%;
+  background-size: 32px 32px, 32px 32px, 32px 32px, 100% 100%;
   overflow: hidden;
 }
 
@@ -883,10 +910,6 @@ textarea.form-input {
   border-top: 1px solid var(--border-light);
 }
 
-.footer-logo {
-  color: var(--primary) !important;
-}
-
 .footer-copyright {
   color: var(--neutral-muted) !important;
 }
@@ -897,10 +920,6 @@ textarea.form-input {
   align-items: center;
 }
 
-.footer-logo {
-  color: var(--neutral-light);
-}
-
 .footer-links {
   display: flex;
   gap: 2rem;
@@ -909,14 +928,14 @@ textarea.form-input {
 }
 
 .footer-link:hover {
-  color: var(--neutral-light);
+  color: var(--accent);
 }
 
 .footer-copyright {
   font-size: 0.85rem;
   margin-top: 2rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-light);
   padding-top: 2rem;
   width: 100%;
 }
@@ -951,12 +970,8 @@ textarea.form-input {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: rgba(255, 255, 255, 0.85);
-  transition: var(--transition-fast);
-}
-
-.header.scrolled-light .demo-back-btn {
   color: var(--primary);
+  transition: var(--transition-fast);
 }
 
 .demo-back-btn:hover {
@@ -1211,13 +1226,13 @@ textarea.form-input {
 .inst-hero {
   padding-top: 180px;
   padding-bottom: 100px;
-  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
-  color: var(--neutral-light);
+  background: var(--inst-hero-bg);
+  color: var(--inst-hero-text);
   text-align: center;
 }
 
 .inst-hero h1 {
-  color: var(--neutral-light);
+  color: inherit;
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -1225,7 +1240,8 @@ textarea.form-input {
 
 .inst-hero p {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: inherit;
+  opacity: 0.8;
   max-width: 700px;
   margin: 0 auto 2.5rem auto;
 }
@@ -1513,7 +1529,7 @@ textarea.form-input {
   
   .nav-link {
     font-size: 1.1rem;
-    color: var(--neutral-light);
+    color: var(--primary);
   }
   
   .nav-cta {
@@ -1541,7 +1557,7 @@ textarea.form-input {
   /* Mobile Hamburger Animation */
   .mobile-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--neutral-light) !important;
+    background-color: var(--primary) !important;
   }
   
   .mobile-toggle.active span:nth-child(2) {
@@ -1550,7 +1566,7 @@ textarea.form-input {
   
   .mobile-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -7px);
-    background-color: var(--neutral-light) !important;
+    background-color: var(--primary) !important;
   }
 }
 
